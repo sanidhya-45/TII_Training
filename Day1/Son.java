@@ -7,7 +7,7 @@ public class Son extends Parent{
        super();
        System.out.println(this.age);
        System.out.println(age);
-       System.out.println("I am son");
+       System.out.println("I am son,child of parent");
    }
 
    @Override
