@@ -5,19 +5,20 @@ fun calculate(x:Int, y:Int,operation:(Int, Int)->Int ):Int
 {
     return operation(x,y);
 }
-fun calculate2(s1:String, s2:String, operation:(String, String)->String):String
+fun calculate2(s1:String, s2:String, operation:(String, String)->Unit):Unit
 {
-    return operation(s1, s2);
+    operation(s1, s2);
 }
 
 // functions passed as arguement in higher order functions
 
 fun sum(x:Int, y:Int)= x+y;
 fun mul(x:Int, y:Int)= x*y;
-fun encode(str1:String, str2:String): String {
+
+fun encode(str1:String, str2:String): Unit {
     var st:String= str1 + str2;
-    return st.uppercase();
-    
+    println(st.uppercase());
+
 }
 
 fun main()
@@ -30,5 +31,10 @@ fun main()
 
     var st= calculate2("sanidhya is ", "attending training in target office", ::encode);
     println(st)
+
+    // lambda function
+    var level= 2;
+    var waterfilter: ((Int)-> Double)={ level->level/2.0};
+    println(waterfilter(25));
 
 }
